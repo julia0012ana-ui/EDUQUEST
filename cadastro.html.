@@ -106,6 +106,7 @@ input, select{
 
 </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -133,6 +134,9 @@ Crie sua conta para começar a aprender
 <option>3º Ensino Médio</option>
 </select>
 
+<label>E-mail</label>
+<input type="email" id="email" placeholder="Digite seu e-mail">
+
 <label>Senha</label>
 <input type="password" id="senha">
 
@@ -156,11 +160,23 @@ Criar Conta
 function criarConta(){
 
     let nome = document.getElementById("nome").value;
+
     let turma = document.getElementById("turma").value;
+
+    let serie = document.getElementById("serie").value;
+
+    let email = document.getElementById("email").value;
+
     let senha = document.getElementById("senha").value;
+
     let confirmar = document.getElementById("confirmarSenha").value;
 
-    if(nome === "" || turma === "" || senha === ""){
+    if(
+        nome === "" ||
+        turma === "" ||
+        email === "" ||
+        senha === ""
+    ){
 
         alert("Preencha todos os campos.");
         return;
@@ -174,19 +190,23 @@ function criarConta(){
 
     }
 
-    // Gera número aleatório
-
     let numero = Math.floor(Math.random() * 999999);
 
-    let idAluno = "EQ-" + numero.toString().padStart(6,"0");
+    let idAluno = "EQ-" +
+    numero.toString().padStart(6,"0");
 
     document.getElementById("resultado").innerHTML = `
-    
+
     ✅ Conta criada com sucesso!
 
     <div class="idGerado">
         ${idAluno}
     </div>
+
+    Nome: ${nome}<br>
+    Turma: ${turma}<br>
+    Série: ${serie}<br>
+    E-mail: ${email}<br><br>
 
     Guarde este ID para acessar sua conta.
 
