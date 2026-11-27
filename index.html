@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Edu Quest</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0b1020,#162447,#1f4068);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+    width:90%;
+    max-width:500px;
+}
+
+.logo{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:18px;
+    color:#d9d9d9;
+    margin-bottom:40px;
+}
+
+.btn{
+    width:100%;
+    padding:18px;
+    margin:10px 0;
+    border:none;
+    border-radius:15px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.aluno{
+    background:#00c2ff;
+    color:white;
+}
+
+.professor{
+    background:#7d5fff;
+    color:white;
+}
+
+.gestor{
+    background:#ff9800;
+    color:white;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+.footer{
+    margin-top:40px;
+    color:#a5a5a5;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+🎓
+</div>
+
+<h1>Edu Quest</h1>
+
+<p>
+Aprenda, evolua e conquiste o conhecimento.
+</p>
+
+<button class="btn aluno" onclick="entrarAluno()">
+👨‍🎓 Sou Aluno
+</button>
+
+<button class="btn professor" onclick="entrarProfessor()">
+👨‍🏫 Sou Professor
+</button>
+
+<button class="btn gestor" onclick="entrarGestor()">
+👑 Sou Gestor
+</button>
+
+<div class="footer">
+Versão Beta • Edu Quest
+</div>
+
+</div>
+
+<script>
+
+function entrarAluno(){
+    window.location.href="login-aluno.html";
+}
+
+function entrarProfessor(){
+    window.location.href="login-professor.html";
+}
+
+function entrarGestor(){
+    window.location.href="login-gestor.html";
+}
+
+</script>
+
+</body>
+</html>
