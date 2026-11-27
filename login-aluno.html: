@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Edu Quest</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0A1128,#001F54,#034078);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    max-width:450px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(0,0,0,0.4);
+    text-align:center;
+}
+
+.logo{
+    font-size:70px;
+    margin-bottom:10px;
+}
+
+h1{
+    color:white;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    color:#d8d8d8;
+    margin-bottom:30px;
+}
+
+.input-group{
+    text-align:left;
+    margin-bottom:20px;
+}
+
+label{
+    color:white;
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.botao{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#00BFFF;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.botao:hover{
+    background:#0099cc;
+}
+
+.criarConta{
+    margin-top:20px;
+}
+
+.criarConta a{
+    color:#80dfff;
+    text-decoration:none;
+}
+
+.voltar{
+    margin-top:25px;
+}
+
+.voltar a{
+    color:#ccc;
+    text-decoration:none;
+}
+
+#mensagem{
+    margin-top:15px;
+    color:#ffcccb;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="logo">🎓</div>
+
+<h1>Edu Quest</h1>
+
+<p class="subtitulo">
+Entre para continuar sua jornada do conhecimento
+</p>
+
+<div class="input-group">
+<label>ID do Aluno</label>
+<input type="text" id="idAluno" placeholder="Ex: EQ-2A-015">
+</div>
+
+<div class="input-group">
+<label>Senha</label>
+<input type="password" id="senha" placeholder="Digite sua senha">
+</div>
+
+<button class="botao" onclick="login()">
+Entrar
+</button>
+
+<div id="mensagem"></div>
+
+<div class="criarConta">
+<a href="cadastro.html">
+Criar conta
+</a>
+</div>
+
+<div class="voltar">
+<a href="index.html">
+← Voltar
+</a>
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+    let id = document.getElementById("idAluno").value;
+    let senha = document.getElementById("senha").value;
+
+    if(id === "" || senha === ""){
+        document.getElementById("mensagem").innerHTML =
+        "Preencha todos os campos.";
+        return;
+    }
+
+    // Firebase será conectado futuramente
+
+    document.getElementById("mensagem").style.color = "#90ee90";
+
+    document.getElementById("mensagem").innerHTML =
+    "Login realizado com sucesso!";
+
+    setTimeout(() => {
+
+        window.location.href = "dashboard-aluno.html";
+
+    }, 1500);
+
+}
+
+</script>
+
+</body>
+</html>
